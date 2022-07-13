@@ -313,6 +313,7 @@ button {
   justify-content: space-between;
   padding: 70px;
   gap: 20px;
+  max-width: 1200px;
 }
 
 .prices__container-pricingbox1 {
@@ -602,6 +603,10 @@ button {
 
   .benefits__box-img {
     width: ;
+  }
+
+  .prices__container {
+    flex-direction: column;
   }
 
   #contact {
