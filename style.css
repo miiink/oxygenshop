@@ -93,7 +93,15 @@ button {
 
 .navbar__toggle-btn {
   color: var(--color-blue);
+  position: absolute;
+  top: 24px;
+  right: 32px;
   display: none;
+  font-size: 15px;
+}
+
+.navbar__toggle-btn:hover {
+  cursor: pointer;
 }
 
 /*Why Us*/
@@ -156,6 +164,8 @@ button {
   padding: 20px 170px;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .our-data__num {
@@ -230,7 +240,7 @@ button {
   justify-content: space-between;
 }
 
-.benefits__box {
+.benefits__box1 {
   box-sizing: border-box;
   width: 700px;
   height: 230px;
@@ -241,6 +251,21 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 40px;
+}
+
+.benefits__box2,
+.benefits__box3 {
+  box-sizing: border-box;
+  width: 700px;
+  height: 230px;
+  background: var(--color-white);
+  border: 1px solid #e8e9ed;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  flex-direction: row-reverse;
 }
 
 .benefits__twoboxes {
@@ -301,7 +326,7 @@ button {
 /*Pricing*/
 
 .prices__pricing-title {
-  padding-top: 60px;
+  padding-top: 55px;
   font-family: "Raleway";
   font-weight: 400;
   font-size: 36px;
@@ -314,11 +339,12 @@ button {
   padding: 70px;
   gap: 20px;
   max-width: 1200px;
+  margin: auto;
 }
 
 .prices__container-pricingbox1 {
-  width: 300px;
-  height: 370px;
+  width: 100%;
+  padding: 20px 10px 50px;
   border: 1px solid var(--color-magenta);
   border-radius: 18px;
   display: flex;
@@ -329,8 +355,7 @@ button {
 }
 
 .prices__container-pricingbox2 {
-  width: 300px;
-  height: 370px;
+  width: 100%;
   border: 1px solid var(--color-blue);
   border-radius: 18px;
   display: flex;
@@ -341,8 +366,7 @@ button {
 }
 
 .prices__container-pricingbox3 {
-  width: 300px;
-  height: 370px;
+  width: 100%;
   border: 1px solid var(--color-aquamarine);
   border-radius: 18px;
   display: flex;
@@ -357,7 +381,7 @@ button {
   font-weight: var(--wegiht-bold);
   font-size: 20px;
   padding-top: 45px;
-  margin: 0;
+  margin-bottom: -33px;
 }
 
 .prices__container__dollar1 {
@@ -365,6 +389,7 @@ button {
   font-weight: var(--wegiht-thin);
   font-size: 46px;
   color: var(--color-magenta);
+  text-align: center;
 }
 
 .prices__container__dollar2 {
@@ -372,6 +397,7 @@ button {
   font-weight: var(--wegiht-thin);
   font-size: 46px;
   color: var(--color-blue);
+  text-align: center;
 }
 
 .prices__container__dollar3 {
@@ -379,6 +405,38 @@ button {
   font-weight: var(--wegiht-thin);
   font-size: 46px;
   color: var(--color-aquamarine);
+  text-align: center;
+}
+
+.checkicon1 {
+  margin-right: 4px;
+  background-color: transparent;
+  outline: 1px solid var(--color-magenta);
+  border: 1px solid var(--color-magenta);
+  border-radius: 3px;
+}
+
+.checkicon2 {
+  margin-right: 4px;
+  background-color: transparent;
+  outline: 1px solid var(--color-blue);
+  border-radius: 3px;
+}
+
+.checkicon3 {
+  margin-right: 4px;
+  background-color: transparent;
+  outline: 1px solid var(--color-aquamarine);
+  border-radius: 3px;
+  color: red;
+}
+
+.prices__container__limited {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  margin-top: -30px;
 }
 
 .prices__container__features-list {
@@ -394,12 +452,13 @@ button {
 
 .prices__container-button1 {
   position: absolute;
+  bottom: -1.5rem;
+  transform: translateX(-50%);
+  left: 50%;
   width: 130px;
   height: 40px;
   background-color: var(--color-magenta);
   border-radius: 23px;
-  top: 350px;
-  left: 60px;
   color: white;
   font-family: "Open Sans";
   font-weight: var(--wegiht-bold);
@@ -407,12 +466,13 @@ button {
 
 .prices__container-button2 {
   position: absolute;
+  bottom: -1.5rem;
+  transform: translateX(-50%);
+  left: 50%;
   width: 130px;
   height: 40px;
   background-color: var(--color-blue);
   border-radius: 23px;
-  top: 350px;
-  left: 70px;
   color: white;
   font-family: "Open Sans";
   font-weight: var(--wegiht-bold);
@@ -420,12 +480,13 @@ button {
 
 .prices__container-button3 {
   position: absolute;
+  bottom: -1.5rem;
+  transform: translateX(-50%);
+  left: 50%;
   width: 130px;
   height: 40px;
   background-color: var(--color-aquamarine);
   border-radius: 23px;
-  top: 350px;
-  left: 65px;
   color: white;
   font-family: "Open Sans";
   font-weight: var(--wegiht-bold);
@@ -437,6 +498,8 @@ button {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .contact__main {
@@ -450,6 +513,10 @@ button {
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
+}
+
+.contact__container1 {
+  margin-right: 150px;
 }
 
 .contact__container2-name-title,
@@ -498,6 +565,8 @@ button {
 }
 
 .contact__submit {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .contact__submit-button {
@@ -506,9 +575,9 @@ button {
   background-color: var(--color-blue);
   border-radius: 35px;
   color: white;
-  align-items: flex-end;
   margin-top: 15px;
   margin-left: 190px;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
 }
 
 .contact__submit-button:hover {
@@ -518,6 +587,15 @@ button {
   border-radius: 35px;
   color: white;
   cursor: pointer;
+}
+
+.contact__subcontainer-mail {
+  display: flex;
+  margin-right: 20px;
+}
+
+.contact__subcontainer-telf {
+  display: flex;
 }
 
 /*Footer*/
@@ -568,10 +646,13 @@ button {
     flex-direction: column;
   }
 
-  .benefits__box {
+  .benefits__box1,
+  .benefits__box2,
+  .benefits__box3 {
     width: auto;
     height: auto;
     display: block;
+    margin-bottom: 20px;
   }
 
   .benefits__background {
@@ -602,14 +683,30 @@ button {
   }
 
   .benefits__box-img {
-    width: ;
+    margin-top: 30px;
   }
 
   .prices__container {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .prices__container-pricingbox1,
+  .prices__container-pricingbox2,
+  .prices__container-pricingbox3 {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    padding: 30px 90px;
+    margin-bottom: 30px;
   }
 
   #contact {
     flex-direction: column;
+  }
+
+  .contact__subcontainer {
+    display: block;
   }
 }
