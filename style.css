@@ -137,7 +137,9 @@ button {
   top: 0px;
   border-radius: 40px;
   box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
-  transition: all 0.4s;
+  transition: all 750ms;
+  transition-property: background-color;
+  transition-duration: 750ms;
 }
 
 .whyus__open:hover {
@@ -240,8 +242,42 @@ button {
   justify-content: space-between;
 }
 
+.benefit-circle {
+  width: 70px;
+  height: 70px;
+  background-color: var(--color-magenta);
+  border-radius: 31%;
+  transform: rotate(-45deg);
+}
+
+.benefit-circle2 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-blue);
+}
+
+.benefit-imagecontainer {
+  position: relative;
+}
+
+.benefit-imagecontainer .benefit-circle {
+  position: absolute;
+  top: -20px;
+  left: 125px;
+}
+
+.benefit-imagecontainer2 {
+  position: relative;
+}
+
+.benefit-imagecontainer2 .benefit-circle2 {
+  position: absolute;
+  top: -11px;
+  left: -8px;
+}
+
 .benefits__box1 {
-  box-sizing: border-box;
   width: 700px;
   height: 230px;
   background: var(--color-white);
@@ -273,7 +309,6 @@ button {
 }
 
 .thirdbox {
-  box-sizing: border-box;
   width: 400px;
   height: 230px;
   margin-right: 24px;
@@ -282,7 +317,6 @@ button {
 .benefits__box-additional {
   width: 270px;
   height: 230px;
-  box-sizing: border-box;
   border: 1px solid #e8e9ed;
   border-radius: 5px;
   background: var(--color-aquamarine);
@@ -303,9 +337,18 @@ button {
   font-size: 12px;
 }
 
-.benefits__box-img {
+.benefits__box-img1 {
   width: auto;
-  height: 110px;
+  height: 124px;
+  position: relative;
+  z-index: 2;
+}
+
+.benefits__box-img2 {
+  width: auto;
+  height: 124px;
+  position: relative;
+  z-index: 2;
 }
 
 .benefits__box-line-1 {
@@ -352,6 +395,12 @@ button {
   flex-direction: column;
   align-items: center;
   position: relative;
+  transition: box-shadow 0.3s;
+}
+
+.prices__container-pricingbox1:hover {
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 0 0 11px var(--color-magenta);
 }
 
 .prices__container-pricingbox2 {
@@ -363,6 +412,12 @@ button {
   flex-direction: column;
   align-items: center;
   position: relative;
+  transition: box-shadow 0.3s;
+}
+
+.prices__container-pricingbox2:hover {
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 0 0 11px var(--color-blue);
 }
 
 .prices__container-pricingbox3 {
@@ -374,6 +429,12 @@ button {
   flex-direction: column;
   align-items: center;
   position: relative;
+  transition: box-shadow 0.3s;
+}
+
+.prices__container-pricingbox3:hover {
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 0 0 11px var(--color-aquamarine);
 }
 
 .prices__container__title {
@@ -414,6 +475,7 @@ button {
   outline: 1px solid var(--color-magenta);
   border: 1px solid var(--color-magenta);
   border-radius: 3px;
+  padding: 2px;
 }
 
 .checkicon2 {
@@ -421,6 +483,7 @@ button {
   background-color: transparent;
   outline: 1px solid var(--color-blue);
   border-radius: 3px;
+  padding: 2px;
 }
 
 .checkicon3 {
@@ -429,6 +492,7 @@ button {
   outline: 1px solid var(--color-aquamarine);
   border-radius: 3px;
   color: red;
+  padding: 2px;
 }
 
 .prices__container__limited {
@@ -437,6 +501,7 @@ button {
   font-size: 14px;
   text-align: center;
   margin-top: -30px;
+  padding: 2px;
 }
 
 .prices__container__features-list {
@@ -516,7 +581,7 @@ button {
 }
 
 .contact__container1 {
-  margin-right: 150px;
+  min-width: 50%;
 }
 
 .contact__container2-name-title,
@@ -633,13 +698,23 @@ button {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-white);
+    z-index: 10;
   }
 
   .navbar__menu {
     flex-direction: column;
-    text-align: center;
     width: 100%;
+    background-color: var(--color-white);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
 
   .whyus__our-data {

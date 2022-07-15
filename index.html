@@ -10,15 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/77ad8525ff.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <!--Navbar-->
     <nav id="navbar">
         <div class="navbar__logo">
             <a href="#">OXYGEN Shop</a>
-            <button class="navbar__toggle-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
         </div>
         <div class="navbar__menu">
             <ul class="navbar__menu">
@@ -28,6 +26,10 @@
                 <li class="navbar__menu__item">Contact</li>
             </ul>
         </div>
+        <!-- Toggle button -->
+        <button class="navbar__toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </nav>
     <!--Why Us-->
     <section id="whyus" class="section">
@@ -80,7 +82,10 @@
     <section id="benefits" class="section">
         <div class="benefits__background">
             <div class="benefits__box1">
-                <img src="imgs/macbook.png" alt="macbook" class="benefits__box-img">
+                <div class="benefit-imagecontainer">
+                    <img src="imgs/macbook.png" alt="macbook" class="benefits__box-img1">
+                    <div class="benefit-circle"></div>
+                </div>
                 <div class="benefits__box-texts">
                     <div class="benefits__box-texts-main">
                         <h2 class="benefits__box-title">Be always first</h2>
@@ -90,7 +95,10 @@
                 </div>
             </div>
             <div class="benefits__box2">
-                <img src="imgs/iphone.png" alt="iphone" class="benefits__box-img">
+                <div class="benefit-imagecontainer2">
+                    <img src="imgs/iphone.png" alt="iphone" class="benefits__box-img2">
+                    <div class="benefit-circle2"></div>
+                </div>
                 <div class="benefits__box-texts">
                     <h2 class="benefits__box-title">Your shop is<br> where you are!</h2>
                     <h5 class="benefits__box-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h5>
