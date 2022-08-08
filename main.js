@@ -242,38 +242,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nextSlide();
 });
-
-//dots
-const slide = document.querySelector("#slideShow");
-const slideItems = document.querySelectorAll(".inner-photo");
-let slideWidth = slide.clientWidth;
-const maxSlide = slideItems.length;
-let currSlide = 1;
-
-// 페이지네이션 생성
-const pagination = document.querySelector(".slide_pagination");
-
-for (let i = 0; i < maxSlide; i++) {
-  if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
-  else pagination.innerHTML += `<li>•</li>`;
-}
-
-const paginationItems = document.querySelectorAll(".slide_pagination > li");
-console.log(paginationItems);
-
-if (currSlide > 0) {
-  paginationItems.forEach((i) => i.classList.remove("active"));
-  paginationItems[currSlide - 1].classList.add("active");
-}
-
-for (let i = 0; i < maxSlide; i++) {
-  paginationItems[i].addEventListener("click", () => {
-    currSlide = i + 1;
-    const offset = slideWidth * (currSlide - 1);
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: ${-offset}px`);
-    });
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  });
-}

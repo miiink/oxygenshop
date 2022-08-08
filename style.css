@@ -1012,26 +1012,3 @@ button:hover {
 .next {
   right: 10px;
 }
-
-ul,
-li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.slide_pagination {
-  display: flex;
-  gap: 5px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.slide_pagination > li {
-  color: #a8bcd888;
-  cursor: pointer;
-  font-size: 25px;
-}
-.slide_pagination > li.active {
-  color: #1b3c69;
-}
