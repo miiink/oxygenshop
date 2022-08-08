@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Oxygen Shop</title>
+    <link rel="icon" href="imgs/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/oxygenshop/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/77ad8525ff.js" crossorigin="anonymous"></script>
-    <script src="main.js" defer></script>
+    <script src="main.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body>
+    <!--Progress Bar-->
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
     <!--Navbar-->
     <nav id="navbar">
         <div class="navbar__logo">
             <a href="#">OXYGEN Shop</a>
         </div>
         <div class="navbar__menu">
-            <ul class="navbar__menu">
+            <ul class="navbar__menu__container">
                 <li class="navbar__menu__item">Why Us</li>
                 <li class="navbar__menu__item">Benefits</li>
                 <li class="navbar__menu__item">Prices</li>
@@ -123,6 +133,16 @@
     <!--Prices-->
     <section id="prices" class="section">
         <p class="prices__pricing-title">Pricing</p>
+        <div class="currencies__container">
+            <form id="currencies__container" action="#">
+                <label for="currencies">Currency:</label>
+                <select name="currencies" id="currencies">
+                    <option value="eur">EUR</option>
+                    <option value="usd">USD</option>
+                    <option value="gbp">GBP</option>
+                </select>
+            </form>
+        </div>
         <div class="prices__container">
             <div class="prices__container-pricingbox1">
                 <div class="prices__container-pricingbox1-title">
@@ -171,8 +191,26 @@
                 <button class="prices__container-button3">Begin</button>
             </div>
         </div>
-
     </section>
+
+    <!--Photo Slider-->
+    
+    <div id="slideShow">
+        <div>
+            <div class="inner-photo"><img src="imgs/slider1.jpeg" alt=""></div>
+            <div class="inner-photo"><img src="imgs/slider2.jpeg" alt=""></div>
+            <div class="inner-photo"><img src="imgs/slider3.jpeg" alt=""></div>
+        </div>
+        
+
+        <p class="controller">
+            <span class="prev">&lang;</span>  
+            <span class="next">&rang;</span>
+        </p>
+            
+        <ul class="slide_pagination"></ul>
+
+    </div>
 
     <!--Contact-->
     <section id="contact" class="section">
@@ -190,27 +228,35 @@
                 </div>
             </div>
         </div>
-        <div class="contact__container2">
-            <p class="contact__container2-name">
+
+        <form id="form" class="contact__container2">
+            <div class="contact__container2-name">
                 <p class="contact__container2-name-title">Name</p>
-                <hr class="contact__container2-email-bar"></hr>
-                </p>
-            <p class="contact__container2-email">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" id="username" class="contact__container2-name-bar" autocomplete="off"/>
+                <i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="error"></div>
+            </div>
+            <div class="contact__container2-email">
                 <p class="contact__container2-email-title">Email</p>
-                <hr class="contact__container2-email-bar"></hr>
-                <div></div>
-            </p>
-            <div class="contact__container2-terms">
+                <i class="far fa-envelope"></i>
+                <input type="email" name="email" id="email" class="contact__container2-email-bar" autocomplete="off"/>
+                <i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="error"></div>
+            </div>
+            <section class="contact__container2-terms">
                 <label class="contact__container2-terms-checkbox">
                     <input type="checkbox">
                     <span class="checkmark"></span>
                 </label>
                 <p class="contact__container2-terms-text">I hereby give consent for my personal data included in my application to be processed for the purposes of the recruitment process under the European Parliament’s and Council of the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (Data Protection Directive)</p>
-            </div>
+            </section>
             <div class="contact__submit">
-                <button class="contact__submit-button">Send</button>
+                <button id="btn" type="submit" class="contact__submit-button">Send</button>
             </div>
-        </div>
+        </form>
     </section>
     <!--Footer-->
     <footer id="footer" class="section">
@@ -225,5 +271,27 @@
             </div>
         </div>
     </footer>
+    <!--Arrow up-->
+    <button class="arrow-up">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!--Pop up : Newsletter-->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-title">
+                <h2>Sign up to our Newsletter</h2>
+            </div>
+            <div class="close-area">Close</div>
+            <div class="modalcontent"> The most popular sales platform in country. Be seen by millions of customers every day. Increase your sales and get more exposure on our platform</div>
+            
+            <div class="modalcontent">
+                <form id="newsletter-form">
+                    <label for="newsletter-email">Email</label>
+                    <input type="email" id="newsletter-email" for="newsletter-email" placeholder="oxygen@gmail.es">
+                    <button class="newsletter-button" type="submit">Subscribe!</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
